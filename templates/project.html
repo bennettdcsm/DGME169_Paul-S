@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ project.title }} | Paul Sin</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .project-detail-section {
+            padding: 8rem 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .project-meta-header {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2rem;
+        }
+
+        .project-label {
+            color: var(--accent-2);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .tags-container {
+            display: flex;
+            gap: 10px;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--ink);
+            white-space: pre-line;
+            /* Preserves newlines if any */
+        }
+
+        .back-nav {
+            margin-bottom: 4rem;
+        }
+
+        .back-link {
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--ink);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shell">
+        <header>
+            <div class="logo">PS / 2025</div>
+            <nav>
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('contact') }}" class="cta">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="project-detail-section">
+                <div class="back-nav">
+                    <a href="{{ url_for('home') }}#projects" class="back-link">← Back to Projects</a>
+                </div>
+
+                <div class="project-meta-header">
+                    <span class="project-label">{{ project.label }} · {{ project.year }}</span>
+                    <h1>{{ project.title }}</h1>
+                    <div class="tags-container">
+                        {% for tag in project.tags %}
+                        <span class="tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="project-description">
+                    <p><strong>Summary</strong></p>
+                    <p>{{ project.summary }}</p>
+                    <br>
+                    <p><strong>Details</strong></p>
+                    <p>{{ project.description }}</p>
+                </div>
+
+                <div style="margin-top: 4rem;">
+                    <a class="button primary" href="{{ url_for('contact') }}">Interested? Contact me</a>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

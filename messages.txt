@@ -1,0 +1,29 @@
+Name: Test User
+Phone: 010-0000-0000
+Email: test@example.com
+Consent: on
+--------------------
+Name: Test Service User
+Phone: 010-9999-9999
+Email: service@test.com
+Services: web, ai
+Consent: on
+--------------------
+Name: Paul Sin
+Phone: 6504184253
+Email: tlsrudgk13@gmail.com
+Services: web, ai, ux
+Consent: on
+--------------------
+Name: asd
+Phone: ads
+Email: asd@com
+Services: 
+Consent: on
+--------------------
+Name: Paul Sin
+Phone: 6504184253
+Email: sinp1@my.smccd.edu
+Services: web, ai, ux
+Consent: on
+--------------------
